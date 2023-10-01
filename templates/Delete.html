@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block zawartosc %}
+
+<h1> Czy jesteś pewien, że chcesz usunąć salę?</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" value="Tak" name="odp">
+        <input type="submit" value="Nie" name="odp">
+    </form>
+
+{% endblock %}
+

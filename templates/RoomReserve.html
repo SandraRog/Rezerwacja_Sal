@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block zawartosc %}
+
+<form method="post">
+        {% csrf_token %}
+    Dodaj komenatrz:<br>
+    <textarea name="comment">
+    </textarea><br>
+<input type="date" name="date">Wybierz datę
+        <p><button> Zatwierdź </button></p>
+
+</form>
+
+{% endblock %}

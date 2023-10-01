@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block zawartosc %}
+
+    <form method="post">
+        {% csrf_token %}
+        <h>Dodaj nową salę: </h><br>
+        <p>Nazwa sali <input type="text" name="name" placeholder="Nazwa sali"></p>
+        <p>Pojemność sali <input type="number" name="capacity" placeholder="Pojemność sali"></p>
+        <p>Dostępność rzutnika <input type="checkbox" name="projector" placeholder="Dostępność projektora">
+        <p><button> Zatwierdź </button></p>
+    </form>
+
+{% endblock %}
+
+
+
+

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block zawartosc %}
+
+    <h2>Nazwa sali: {{ room.name }}</h2>
+    <p>Pojemność sali: {{ room.room_capacity }}</p>
+    <p>Dostępność rzutnika:{{ room.projector_availability }}</p>
+    <p>
+      <button><a href="/room/modify/{{ room.id }}/">edytuj</a></button>
+      <button><a href="/room/delete/{{ room.id }}/">usuń</a></button>
+      <button><a href="/room/reserve/{{ room.id }}/">zarezerwuj</a></button>
+    </p>
+
+{% endblock %}

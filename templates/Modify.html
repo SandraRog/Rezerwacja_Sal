@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block zawartosc %}
+
+    <form method="post">
+        {% csrf_token %}
+        <p>Edytuj nazwę sali<input type="text" name="name" placeholder="Edytuj nazwę sali" value="{{ room.name }}"></p>
+        <p>Edytuj pojemność sali <input type="number" name="capacity" placeholder="Edytuj pojemność sali" value="{{ room.room_capacity }}"></p>
+        <p>Edytuj dostępność projektora <input type="checkbox" name="projector" placeholder="Edytuj dostępność projektora"
+        {% if room.projector_availability %} checked {% endif %}
+        >
+        <p><button> Zatwierdź </button></p>
+    </form>
+
+{% endblock %}
+

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block zawartosc %}
+    Lista wszystkich sal
+    <ul>
+        <table>
+            <thead>
+            <th>Nazwa sali</th>
+            <th>Pojemność sali</th>
+            <th>Edytuj</th>
+            <th> Usuń</th>
+            <th> Rezerwuj</th>
+            <th> Dostępność sali</th>
+            </thead>
+        <tbody>
+        {% for room in rooms %}
+        <tr>
+            <td><a href="/room/{{ room.id }}"> {{ room.name}} </a></td>
+            <td>{{ room.room_capacity }}</td>
+            <td><a href="/room/modify/{{ room.id }}/"><button type = 'button'>Edytuj</button></a></td>
+            <td><a href="/room/delete/{{ room.id }}/"><button type = 'button'>Usuń</button></a></td>
+            <td><a href="/room/reserve/{{ room.id }}/"><button type = 'button'>Rezerwuj</button></a></td>
+
+            <td>{% for reservation in room.reservations_set.all %}
+                 {{ reservation.date }}
+                {% endfor %}
+        </td>
+        </tr>
+            </tbody>
+        {% endfor %}
+        </table>
+{% endblock %}
